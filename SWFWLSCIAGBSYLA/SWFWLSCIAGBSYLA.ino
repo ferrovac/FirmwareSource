@@ -27,8 +27,8 @@
 #include "LscPersistence.h"
 
 
-String versionString = "24900_v0.2.0_I";
-//Compiled with LSClib v1.1.0_E
+String versionString = "24900_v0.2.0_G";
+//Compiled with LSClib v1.1.1_F
 
 
 LSC& lsc = LSC::getInstance();
