@@ -6,10 +6,12 @@ All notable changes to this project will be documented in this file.
 ## [0.1.3] - 2024-03-19
 ### Added
 - Added a text-box which labels the main vacuum vessel for clarity.
-- [Release: 24900_G](https://github.com/ferrovac/GLOVEBOX/releases/tag/v0.1.1.2_F)
+
+[Release: 24900_G](https://github.com/ferrovac/GLOVEBOX/releases/tag/v0.1.1.2_F)
 ## [0.1.2] - 2024-01-25
 ### Added
 - Buffer pressure gauge now shows "-URange-" if the pressure is better than 1E-4 mbar.
+
 [Release: 24900_F](https://github.com/ferrovac/GLOVEBOX/releases/tag/v0.1.1.2_F)
 ## [0.1.1] - 2024-01-24
 ### Fixed
