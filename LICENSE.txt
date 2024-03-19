@@ -1,16 +1,4 @@
-                Copyright (C) 2024 Ferrovac AG
-To comply with the license terms of some libraries used in this project, 
-the project as a whole is licensed under the GNU GENERAL PUBLIC LICENSE 
-Version 3. However, we maintain the original open-source licenses for 
-specific library files that are not covered by the GPLv3. Detailed 
-information about the applicable license for each file can be found in 
-the header of the individual file. If the license information is missing
-in one of the files, or if there is a conflict with what is stated here 
-(this applies to any additional licensing information found anywhere, not
-only in the headers of files), then the file is licensed under GPLv3. A
-summary of the licensing details for these exceptions, along with
-additional information, can also be found in the README file. Unless 
-stated otherwise, Ferrovac AG retains the copyright of all files.
+                   Copyright (C) 2024 Ferrovac AG
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
