@@ -26,8 +26,8 @@
 #include "LscPersistence.h"
 
 
-String versionString = "24960_v1.0.0_G";
-//Compilled with LSClib v0.1.0
+String versionString = "24960_v1.1.0_G";
+//Compilled with LSClib v1.1.0
 
 
 
