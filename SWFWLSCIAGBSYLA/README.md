@@ -2,10 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+
 ## [Unreleased]
 ## [0.2.0] - 2024-03-19
 ### Added
 - Added a text-box which labels the main vacuum vessel for clarity.
+### Fixed
+- Typo in Vent Error message 'valce' -> 'valve' (yet to be implemented)
 
 [Release: 24900_G](https://github.com/ferrovac/FirmwareSource/releases/tag/v0.2.0)
 ## [0.1.2] - 2024-01-25
