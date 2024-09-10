@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [0.2.0] - 2024-03-19
 ### Added
 - Added a text-box which labels the main vacuum vessel for clarity.
+- Controll if LN2 is connected and throw an error after 10min when temp in dewer is not bellow 0°C while autofill is on. (To prevent valve overheating)
 ### Fixed
 - Typo in Vent Error message 'valce' -> 'valve' (yet to be implemented)
 
