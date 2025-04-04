@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Vent/Pump button on keypanel now has to be pressed for 1 sec to trigger venting/pumping
 - Typo in Vent Error message 'valce' -> 'valve'
-
+[Release: 24900_H](https://github.com/ferrovac/FirmwareSource/releases/tag/v0.2.1)
 ## [0.2.0] - 2024-03-19
 ### Added
 - Added a text-box which labels the main vacuum vessel for clarity.
