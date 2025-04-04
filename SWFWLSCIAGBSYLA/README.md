@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.2.1] - 2025-04-04
 ### Added
-- Added leak detection in glove box. If the vacuum does not reach 50000Pa within 10 seconds we abort the pumping procedure.
+- Added leak detection in glove box. If the vacuum does not reach 70000Pa within 30 seconds we abort the pumping procedure.
 ### Fixed
 - Vent/Pump button on keypanel now has to be pressed for 1 sec to trigger venting/pumping
 - Typo in Vent Error message 'valce' -> 'valve'
