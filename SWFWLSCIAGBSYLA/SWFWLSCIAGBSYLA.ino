@@ -27,7 +27,7 @@
 #include "LscPersistence.h"
 
 
-String versionString = "24900_v0.2.0_G";
+String versionString = "24900_v0.2.1_H";
 //Compiled with LSClib v1.1.1_F
 
 
@@ -86,7 +86,7 @@ Components::Valve valve_LN2(lsc.openCollectorOutput_0,"LN2 Valve Dewar");
 Components::LN2LevelMeter LN2LevelMeter(lsc.analogIn_0,"LN2 Level Sensor");
 
 
-timer PumpLeakTimer;
+timer PumpLeakTimerGloveBox;
 Persistent<int> LN2_level("ln2l",35);
 long LN2_Timer = 0;
 
@@ -456,7 +456,7 @@ void gloveBoxScene(){
     }
     // Venting Pumping
     if(millis() - externalVentPressTimer > 1000 && !lsc.digitalInIsolated_1.getState()){
-      if(externalVentCounter > 20){
+      if(externalVentCounter > 1000){   //increased to 1 sec to increase panel fault tolerance
         externalVentPressed = true;
         externalVentPressTimer = millis();
         externalVentCounter = 0;
@@ -472,6 +472,8 @@ void gloveBoxScene(){
         valve_AngleBuffer.close(); //we need to protect Buffer vac 
         valve_AngelCryoDock.open(1000);
         stateCryoDockIsVenting = false;
+        PumpLeakTimerGloveBox.start(); //here we start the leak timer. beacuse we start pumping 
+
       }else {
         if(!gateValve_GloveBox.getState()){ // Conditions to allow venting Cryo Dock
           stateCryoDockIsVenting = true;
@@ -638,7 +640,7 @@ void mainControllFunction(){
   if(stateBufferIsVenting){
     if(gateValve_GloveBox.getState()){
       stateBufferIsVenting = false;
-      sceneManager.showMessageBox("Error Venting","Can not vent Buffer while Glove Box gate valce is open.", "", "Okay");
+      sceneManager.showMessageBox("Error Venting","Can not vent Buffer while Glove Box gate valve is open.", "", "Okay");
       return;
     }
 
@@ -647,6 +649,17 @@ void mainControllFunction(){
   }else{
     valve_VentBuffer.close();
     pump_scrollPump.turnOn();
+  }
+  //Cryo Dock Leak detection
+  if(!stateCryoDockIsVenting){
+    if(PumpLeakTimerGloveBox.getTime() > 30000){ //we started pumping more than 10sec ago
+      if (gauge_CryoLoadLock.getPressure() >  70000){ //-> We have a leak
+        BEEPER.beep(30);
+        stateCryoDockIsVenting = true; // stop pumping 
+      }
+    }else{ // no leak
+      PumpLeakTimerGloveBox.stop();
+    }
   }
 
   //Cryo Dock Venting Pumping
